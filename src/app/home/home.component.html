@@ -1,0 +1,168 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about-us">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#jobs">Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#clients">Clients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#employers">Employers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact-us">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Home Content Section -->
+<div class="container mt-4">
+  <h2>Home Page</h2>
+  <form>
+    <div class="form-group">
+      <label for="jobDescription"></label>
+      <input type="text" class="form-control" id="jobDescription" placeholder="Enter job description">
+    </div>
+    <div class="form-group">
+      <label for="jobType"></label>
+
+      <select class="form-control" id="jobType">
+        <input type="text" class="form-control" placeholder="Select Locations">
+        <option value="" disabled selected></option>
+        <option>Pune</option>
+        <option>Bangalore</option>
+        <option>Mumbai</option>
+        <option>Hyderabad</option>
+        <option>Lucknow</option>
+        <option>Ahmedabad</option>
+      </select>
+    </div>
+
+    <div>
+      <input type="checkbox" id="partTime" name="employmentType" value="Part-Time">
+      <label for="partTime" class="part-time-label">Part-Time</label>
+  </div>
+  <div>
+      <input type="checkbox" id="fullTime" name="employmentType" value="Full-Time">
+      <label for="fullTime" class="full-time-label">Full-Time</label>
+  </div>
+<!-- Register Button -->
+<!-- Button to open modal -->
+<button type="button" class="btn btn-primary" (click)="openRegistrationModal()">Register</button>
+</form>
+<!-- Modal HTML -->
+
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registration Form</h5>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body custom-centered-content">
+        <!-- Form content here (fields for registration) -->
+        <div class="modal-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <!-- Other form inputs -->
+        
+           
+        
+          </form>
+        </div>
+        
+        
+      <div class="size"><input type="text" placeholder="First Name">   <input type="text" placeholder="Last Name"> 
+      </div>
+       <div class="size"> <input type="text"  placeholder="Email"></div><br>
+      <div class="size"><input type="phoneno"  placeholder="+91"> </div><br>
+       <!--Age-->
+      <div class="size">
+        <label for="ageRange" class="form-label">Age:</label>
+        <input type="range" class="form-range" id="ageRange" min="18" max="65" oninput="this.nextElementSibling.value = this.value">
+        <output>18</output>
+        <div class="d-flex justify-content-between">
+            <span style="font-size: 0.8rem;">Min:18</span>
+            <span style="font-size: 0.8rem;">Max:65</span>
+        </div>
+    </div>
+    <div class="size" >
+      <div class="form-group">
+        <label for="stateSelect">Select State:</label>
+        <select class="form-control" id="stateSelect">
+          <option selected>Choose...</option>
+          <option value="AP">Andhra Pradesh</option>
+          <option value="AR">Arunanchal Pradesh</option>
+          <option value="AS">Assam</option>
+          <option value="BI">Bihar</option>
+          <option value="CH">Chattisgarh</option>
+          <option value="GO">Goa</option>
+          <option value="HA">Haryana</option>
+          <option value="JH">Jharkhand</option>
+          <option value="KA">Karnataka</option>
+          <option value="KE">Kerala</option>
+          <option value="MP">Madhya Pradesh</option>
+          <option value="MH">Maharashtra</option>
+          <option value="MA">Manipur</option>
+          <option value="ME">Meghalaya</option>
+          <option value="MI">Mizoram</option>
+          <option value="NA">Nagaland</option>
+          <option value="OS">Odisha</option>
+          <option value="PU">Punjab</option>
+          <option value="RA">Rajasthan</option>
+          <option value="SI">Sikkim</option>
+          <option value="TN">Tamilnadu</option>
+          <option value="TR">Tripura</option>
+          <option value="UP">Uttar Pradesh</option>
+          <option value="UT">Uttarakhand</option>
+          <option value="WB">West Bengal</option>
+        </select>
+      </div>
+    </div>
+    <!--country-->
+
+    <div class="size">
+      <div class="form-group">
+        <label for="countrySelect">Country:</label>
+        <select class="form-control" id="stateSelect">
+          <option selected>Choose...</option>
+          <option value="IN">India</option>
+          <option value="OT">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!--address-->
+    <div class="size"><input type="text"  placeholder="Address" > </div>
+    <!--tags-->
+    <div class="size">
+      <label for="tags">Enter Tags:</label>
+      <div class="tags-input" id="tags">
+        <input type="text" placeholder="Add a tag" onkeyup="addTag(event)">
+      </div>
+    </div>
+    <div class="tag-input-container">
+      <label for="interests">Interests:</label>
+      <div class="tags-container" id="tagsContainer">
+          <span *ngFor="let tag of tags" class="tag">{{ tag }}</span>
+      </div>
+      <input type="text" id="interestsInput" class="tag-input" placeholder="Add interests">
+       <div>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</div>

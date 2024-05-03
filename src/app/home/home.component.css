@@ -1,0 +1,173 @@
+/* Overall background settings */
+/* Use the full size of the viewport */
+:host {
+  display: block;
+  min-height: 100vh; /* Minimum full viewport height */
+  width: 100%; /* Full width */
+  background-image: url('/assets/home.jpeg'); /* Adjust the path as necessary */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow: auto; /* Adds scroll to the page if content exceeds viewport */
+}
+
+
+/* Navbar customization */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+}
+
+.nav-link {
+  color: #007bff; /* Bootstrap primary blue */
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Form styling */
+.container-1 {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 20px; /* Space from navbar */
+  width:601px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-check-label {
+  margin-left: 5px;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+.mt-4 {
+  margin-top: 7.5rem !important;
+  align-content: center;
+}
+.jobDescription::placeholder {
+  font-size: 16px; /* Increase font size as needed */
+  color: #888; /* Optional: change the color */
+  font-weight: bold; /* Optional: make the placeholder text bold */
+}
+.form-control {
+  width: 40%;  /* Makes the input take full width of its container */
+  min-width: 300px;  /* Ensures a minimum width for smaller containers */
+  padding: 8px 12px; /* Optional: Adds some padding inside the input */
+  font-size: 16px; /* Adjusts the text size inside the input */
+}
+
+.form-check{
+  padding: 3px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal.show {
+  display: block;
+}
+.modal {
+  display: none; /* Hidden by default */
+}
+
+.modal.show {
+  display: block; /* Show modal when showModal is true */
+}
+.tag-input-container {
+  margin-bottom: 20px;
+}
+
+.tag-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+/* Custom modal size */
+.custom-modal-size {
+  max-width: 70%;  /* You can specify in px, %, or vw */
+}
+@media (max-width: 768px) {
+  .custom-modal-size {
+    max-width: 100%;
+    margin: 10px;
+  }
+}
+
+
+
+.size{
+  max-width: 70%;
+  
+}
+.custom-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center */
+  justify-content: center; /* Vertically center (if needed) */
+  height: 100%; /* Optional: You may adjust or remove this based on your content */
+}
+
+/* Apply to form elements inside the modal to ensure proper alignment */
+.custom-centered-content form {
+  width: 100%;  /* Adjust width as needed, or use Bootstrap grid classes */
+}
+.modal-title{
+  align-items: center;
+}
+
+input[type="file"] {
+  margin-top: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+.custom-modal-size {
+  width: 50%;  /* or any other size */
+  max-width: 400px; /* optional: to ensure it doesn't get too large on bigger screens */
+}
+.part-time-label {
+  color:white; /* Change this color code to your preferred color for Part-Time */
+}
+
+.full-time-label {
+  color: white; /* Change this color code to your preferred color for Full-Time */
+}
